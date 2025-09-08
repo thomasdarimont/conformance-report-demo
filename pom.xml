@@ -5,7 +5,7 @@
     <modelVersion>4.0.0</modelVersion>
 
     <groupId>com.github.thomasdarimont.conformance</groupId>
-    <artifactId>oidf-conformance-report-demo</artifactId>
+    <artifactId>conformance-report-demo</artifactId>
     <version>1.0-SNAPSHOT</version>
 
     <properties>
