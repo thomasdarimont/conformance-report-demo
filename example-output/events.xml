@@ -1,10 +1,10 @@
 <?xml version="1.0" ?>
 <e:events xmlns="https://schemas.opentest4j.org/reporting/core/0.2.0" xmlns:e="https://schemas.opentest4j.org/reporting/events/0.2.0" xmlns:java="https://schemas.opentest4j.org/reporting/java/0.2.0" xmlns:oidf="https://www.openid.org/schemas/conformance/1.0.0">
 <infrastructure><userName>alice</userName><hostName>wonderland</hostName></infrastructure>
-<e:started id="1" name="container" oidf:conformance-test="simple-test" time="2025-09-08T08:05:47.041437Z"></e:started>
-<e:started id="2" name="test1" oidf:ref="OIDSSF-8.1.1" parentId="1" time="2025-09-08T08:05:47.047746Z"></e:started>
-<e:finished id="2" time="2025-09-08T08:05:47.048599Z"><result status="SUCCESSFUL"></result></e:finished>
-<e:started id="3" name="test2" oidf:ref="OIDSSF-8.1.2" parentId="1" time="2025-09-08T08:05:47.050316Z"></e:started>
-<e:finished id="3" time="2025-09-08T08:05:47.050919Z"><result status="SUCCESSFUL"></result></e:finished>
-<e:finished id="1" time="2025-09-08T08:05:47.051460Z"><result status="SUCCESSFUL"></result></e:finished>
+<e:started id="1" name="container" oidf:conformance-test="simple-test" time="2025-09-08T08:49:59.749411Z"></e:started>
+<e:started id="2" name="test1" oidf:specref="OIDSSF-8.1.1" parentId="1" time="2025-09-08T08:49:59.755858Z"></e:started>
+<e:finished id="2" time="2025-09-08T08:49:59.756439Z"><result status="SUCCESSFUL"></result></e:finished>
+<e:started id="3" name="test2" oidf:specref="OIDSSF-8.1.2" parentId="1" time="2025-09-08T08:49:59.757694Z"></e:started>
+<e:finished id="3" time="2025-09-08T08:49:59.758191Z"><result status="SUCCESSFUL"></result></e:finished>
+<e:finished id="1" time="2025-09-08T08:49:59.758639Z"><result status="SUCCESSFUL"></result></e:finished>
 </e:events>

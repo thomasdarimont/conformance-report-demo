@@ -22,15 +22,13 @@ import static org.opentest4j.reporting.events.root.RootFactory.started;
 
 public class ReportGenerationDemo {
 
-    public static final Namespace OIDF = Namespace.of("https://www.openid.org/schemas/conformance/1.0.0");
-
     public static void main(String[] args) throws Exception {
 
         NamespaceRegistry namespaceRegistry = NamespaceRegistry //
                 .builder(Namespace.REPORTING_CORE) //
                 .add("e", Namespace.REPORTING_EVENTS) //
                 .add("java", Namespace.REPORTING_JAVA) //
-                .add("oidf", OIDF) // custom namespace
+                .add("oidf", Conformance.OIDF) // custom namespace
                 .build();
 
         Path eventsXmlFile = Paths.get("events.xml");
@@ -41,17 +39,17 @@ public class ReportGenerationDemo {
                     .append(userName("alice")) //
                     .append(hostName("wonderland")));
             writer.append(started("1", Instant.now(), "container"), it -> {
-                it.withAttribute(QualifiedName.of(OIDF, "conformance-test"), "simple-test"); // custom attribute
+                it.withAttribute(QualifiedName.of(Conformance.OIDF, "conformance-test"), "simple-test"); // custom attribute
             }); // (3)
             writer.append(started("2", Instant.now(), "test1"), started -> {
                 started.withParentId("1");
-                started.withAttribute(QualifiedName.of(OIDF, "ref"), "OIDSSF-8.1.1");
+                started.withAttribute(QualifiedName.of(Conformance.OIDF, "specref"), "OIDSSF-8.1.1");
             }); // (4)
             writer.append(finished("2", Instant.now()), finished -> finished.append(CoreFactory.result(SUCCESSFUL))); // (5)
 
             writer.append(started("3", Instant.now(), "test2"), started -> {
                 started.withParentId("1");
-                started.withAttribute(QualifiedName.of(OIDF, "ref"), "OIDSSF-8.1.2");
+                started.withAttribute(QualifiedName.of(Conformance.OIDF, "specref"), "OIDSSF-8.1.2");
             }); // (4)
             writer.append(finished("3", Instant.now()), finished -> finished.append(CoreFactory.result(SUCCESSFUL))); // (5)
 

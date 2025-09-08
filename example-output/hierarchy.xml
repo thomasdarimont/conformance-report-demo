@@ -4,12 +4,12 @@
     <userName>alice</userName>
     <hostName>wonderland</hostName>
   </infrastructure>
-  <h:root duration="PT0.010023S" name="container" oidf:conformance-test="simple-test" start="2025-09-08T08:05:47.041437Z">
+  <h:root duration="PT0.009228S" name="container" oidf:conformance-test="simple-test" start="2025-09-08T08:49:59.749411Z">
     <result status="SUCCESSFUL"/>
-    <h:child duration="PT0.000853S" name="test1" oidf:ref="OIDSSF-8.1.1" start="2025-09-08T08:05:47.047746Z">
+    <h:child duration="PT0.000581S" name="test1" oidf:specref="OIDSSF-8.1.1" start="2025-09-08T08:49:59.755858Z">
       <result status="SUCCESSFUL"/>
     </h:child>
-    <h:child duration="PT0.000603S" name="test2" oidf:ref="OIDSSF-8.1.2" start="2025-09-08T08:05:47.050316Z">
+    <h:child duration="PT0.000497S" name="test2" oidf:specref="OIDSSF-8.1.2" start="2025-09-08T08:49:59.757694Z">
       <result status="SUCCESSFUL"/>
     </h:child>
   </h:root>
