@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<h:execution xmlns:h="https://schemas.opentest4j.org/reporting/hierarchy/0.2.0" xmlns="https://schemas.opentest4j.org/reporting/core/0.2.0" xmlns:java="https://schemas.opentest4j.org/reporting/java/0.2.0" xmlns:oidf="https://www.openid.org/schemas/conformance/1.0.0">
+  <infrastructure>
+    <userName>alice</userName>
+    <hostName>wonderland</hostName>
+  </infrastructure>
+  <h:root duration="PT0.010023S" name="container" oidf:conformance-test="simple-test" start="2025-09-08T08:05:47.041437Z">
+    <result status="SUCCESSFUL"/>
+    <h:child duration="PT0.000853S" name="test1" oidf:ref="OIDSSF-8.1.1" start="2025-09-08T08:05:47.047746Z">
+      <result status="SUCCESSFUL"/>
+    </h:child>
+    <h:child duration="PT0.000603S" name="test2" oidf:ref="OIDSSF-8.1.2" start="2025-09-08T08:05:47.050316Z">
+      <result status="SUCCESSFUL"/>
+    </h:child>
+  </h:root>
+</h:execution>
