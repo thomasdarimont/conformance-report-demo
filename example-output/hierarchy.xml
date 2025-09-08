@@ -2,14 +2,15 @@
 <h:execution xmlns:h="https://schemas.opentest4j.org/reporting/hierarchy/0.2.0" xmlns="https://schemas.opentest4j.org/reporting/core/0.2.0" xmlns:java="https://schemas.opentest4j.org/reporting/java/0.2.0" xmlns:oidf="https://www.openid.org/schemas/conformance/1.0.0">
   <infrastructure>
     <userName>alice</userName>
+    <oidf:version>5.1.36</oidf:version>
     <hostName>wonderland</hostName>
   </infrastructure>
-  <h:root duration="PT0.009228S" name="container" oidf:conformance-test="simple-test" start="2025-09-08T08:49:59.749411Z">
+  <h:root duration="PT0.007613S" name="container" oidf:conformance-test="simple-test" start="2025-09-08T10:27:26.439469Z">
     <result status="SUCCESSFUL"/>
-    <h:child duration="PT0.000581S" name="test1" oidf:specref="OIDSSF-8.1.1" start="2025-09-08T08:49:59.755858Z">
+    <h:child duration="PT0.000513S" name="test1" oidf:specref="OIDSSF-8.1.1" start="2025-09-08T10:27:26.444562Z">
       <result status="SUCCESSFUL"/>
     </h:child>
-    <h:child duration="PT0.000497S" name="test2" oidf:specref="OIDSSF-8.1.2" start="2025-09-08T08:49:59.757694Z">
+    <h:child duration="PT0.000505S" name="test2" oidf:specref="OIDSSF-8.1.2" start="2025-09-08T10:27:26.446183Z">
       <result status="SUCCESSFUL"/>
     </h:child>
   </h:root>

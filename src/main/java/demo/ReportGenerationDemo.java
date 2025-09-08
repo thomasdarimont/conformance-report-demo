@@ -1,6 +1,7 @@
 package demo;
 
 import org.opentest4j.reporting.events.api.DocumentWriter;
+import org.opentest4j.reporting.events.api.Factory;
 import org.opentest4j.reporting.events.api.NamespaceRegistry;
 import org.opentest4j.reporting.events.core.CoreFactory;
 import org.opentest4j.reporting.events.root.Events;
@@ -37,7 +38,9 @@ public class ReportGenerationDemo {
         try (DocumentWriter<Events> writer = Events.createDocumentWriter(namespaceRegistry, eventsXmlFile)) {
             writer.append(infrastructure(), infrastructure -> infrastructure // (2)
                     .append(userName("alice")) //
+                    .append(ctx -> new Conformance.Version(ctx, "5.1.36"))
                     .append(hostName("wonderland")));
+
             writer.append(started("1", Instant.now(), "container"), it -> {
                 it.withAttribute(QualifiedName.of(Conformance.OIDF, "conformance-test"), "simple-test"); // custom attribute
             }); // (3)
@@ -68,6 +71,7 @@ public class ReportGenerationDemo {
                 ? sourceFileName.substring(0, sourceFileName.length() - 4)
                 : sourceFileName) + ".html";
         var htmlReportFile = firstXmlFile.resolveSibling(targetFileName);
+
         new DefaultHtmlReportWriter().writeHtmlReport(List.of(hierarchyXmlFile), htmlReportFile);
     }
 }

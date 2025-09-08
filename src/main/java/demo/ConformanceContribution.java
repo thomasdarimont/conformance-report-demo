@@ -3,6 +3,7 @@ package demo;
 import com.google.auto.service.AutoService;
 import org.opentest4j.reporting.tooling.spi.htmlreport.Contributor;
 import org.opentest4j.reporting.tooling.spi.htmlreport.KeyValuePairs;
+import org.opentest4j.reporting.tooling.spi.htmlreport.Labels;
 import org.opentest4j.reporting.tooling.spi.htmlreport.PreFormattedOutput;
 import org.opentest4j.reporting.tooling.spi.htmlreport.Section;
 import org.w3c.dom.Element;
@@ -14,6 +15,19 @@ import java.util.List;
 public class ConformanceContribution implements Contributor {
 
     @Override
+    public List<Section> contributeSectionsForExecution(Context context) {
+        List<Section> sections = new ArrayList<>();
+        Element element = context.element();
+        sections.add(Section.builder().title("Test Execution")
+                .addBlock(KeyValuePairs.builder()
+                        .putContent("testname", "testname")
+                        .putContent("Variant", "key=value,key2=value2")
+                        .build())
+                .build());
+        return sections;
+    }
+
+    @Override
     public List<Section> contributeSectionsForTestNode(Context context) {
 
         List<Section> sections = new ArrayList<>();
@@ -21,6 +35,13 @@ public class ConformanceContribution implements Contributor {
         Element element = context.element();
         switch (element.getTagName()) {
             case "h:root" -> {
+                sections.add(Section.builder().title("Exported Values")
+                        .addBlock(KeyValuePairs.builder()
+                                .putContent("key1", "value1")
+                                .putContent("key2", "value2")
+                                .putContent("key3", "value3")
+                                .build())
+                        .build());
             }
             case "h:child" -> {
 
@@ -29,6 +50,9 @@ public class ConformanceContribution implements Contributor {
                     var specReference = Section.builder()
                             .title("Spec Reference")
                             .metaInfo(specref)
+                            .addBlock(Labels.builder()
+                                    .addContent("SSF")
+                                    .addContent(specref).build())
                             .build();
                     sections.add(specReference);
                 }
